@@ -1,0 +1,111 @@
+{
+	"always_show_minimap_viewport": true,
+	"auto_complete_triggers":
+	[
+		{
+			"characters": "<",
+			"selector": "text.html"
+		},
+		{
+			"characters": "/",
+			"selector": "string.quoted.double.html,string.quoted.single.html, source.css"
+		}
+	],
+	"auto_find_in_selection": true,
+	"bold_folder_labels": true,
+	"caret_extra_bottom": 3,
+	"caret_extra_top": 3,
+	"caret_extra_width": 2,
+	"caret_style": "phase",
+	"color_scheme": "Packages/User/Monokai Dark (Flake8Lint).tmTheme",
+	"drag_text": false,
+	"fade_fold_buttons": false,
+	"file_exclude_patterns":
+	[
+		"*.pyc",
+		"*.pyo",
+		"*.exe",
+		"*.dll",
+		"*.obj",
+		"*.o",
+		"*.a",
+		"*.lib",
+		"*.so",
+		"*.dylib",
+		"*.ncb",
+		"*.sdf",
+		"*.suo",
+		"*.pdb",
+		"*.idb",
+		".DS_Store",
+		"*.class",
+		"*.psd",
+		"*.db",
+		"*.sublime-workspace",
+		".DS_Store",
+		"*.pyc",
+		"*.box"
+	],
+	"folder_exclude_patterns":
+	[
+		".svn",
+		".git",
+		".hg",
+		"CVS",
+		"tmp/cache",
+		"__pycache__",
+		"node_modules/**",
+		"bower_components/**"
+	],
+	"font_options":
+	[
+		"gray_antialias",
+		"subpixel_antialias"
+	],
+	"font_size": 15,
+	"fonts_list":
+	[
+		"Andale Mono",
+		"Consolas",
+		"Courier",
+		"Courier New",
+		"Envy Code R",
+		"Inconsolata",
+		"Lucida Console",
+		"Menlo",
+		"Meslo LG S",
+		"Meslo LG M",
+		"Meslo LG L",
+		"Monaco",
+		"ProFontX",
+		"Source Code Pro",
+		"Ubuntu Mono"
+	],
+	"highlight_line": true,
+	"highlight_modified_tabs": true,
+	"ignored_packages":
+	[
+	],
+	"indent_guide_options":
+	[
+		"draw_normal",
+		"draw_active"
+	],
+	"line_padding_bottom": 5,
+	"line_padding_top": 5,
+	"margin": 5,
+	"match_brackets_angle": true,
+	"open_files_in_new_window": false,
+	"overlay_scroll_bars": "enabled",
+	"pep8_max_line_length": 130,
+	"remember_full_screen": true,
+	"rulers":
+	[
+		130
+	],
+	"scroll_past_end": true,
+	"tab_size": 4,
+	"theme": "Adaptive.sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"word_wrap": false
+}
