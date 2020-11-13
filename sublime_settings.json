@@ -97,11 +97,11 @@
 	"match_brackets_angle": true,
 	"open_files_in_new_window": false,
 	"overlay_scroll_bars": "enabled",
-	"pep8_max_line_length": 130,
+	"pep8_max_line_length": 119,
 	"remember_full_screen": true,
 	"rulers":
 	[
-		130
+		119
 	],
 	"scroll_past_end": true,
 	"tab_size": 4,
