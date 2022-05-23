@@ -35,7 +35,7 @@ if [ -z $cmd ]; then
   >&2 echo "Running migrate command..."
     python manage.py migrate --noinput
   # start server
-  >&2 echo "Running SEIU Backend Server...(gunicorn)"
+  >&2 echo "Running Backend Server...(gunicorn)"
     gunicorn config.wsgi -w 4 -b 0.0.0.0:8000 -t 12000 -k gevent --chdir=/app
 else
   >&2 echo "Running command passed (by the compose file)"
