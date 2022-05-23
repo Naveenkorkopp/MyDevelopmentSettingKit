@@ -1,0 +1,105 @@
+version: '3'
+
+# Service Containers
+services:
+  # Database: postgres as hostname
+  postgres:
+    image: postgis/postgis:12-master
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=seiu_db
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./db_dumps:/shared
+
+  # Django Webserver: webserver as hostname
+  webserver:
+    build:
+      context: ./server
+      dockerfile: Dockerfile_develop
+    volumes:
+      - ./server:/app
+      - static-assets:/app/static_root
+      - site-packages:/usr/local/lib/python3.8/site-packages
+      - app-usr-local-bin:/usr/local/bin
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./server/config/.env
+    depends_on:
+      - postgres
+      - redis
+    command: tail -f /dev/null  # Uncomment this and comment next line for debugging with ipdb
+    # command: bash -c "python manage.py wait_for_db &&
+    #                   python manage.py collectstatic --noinput &&
+    #                   python manage.py migrate --noinput &&
+    #                   flake8 &&
+    #                   python manage.py runserver_plus 0:8000"
+
+  # Message Broker: redis as hostname
+  redis:
+    restart: always
+    image: redis:latest
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+
+  # Celery Worker: celeryworker as hostname
+  celeryworker:
+    build:
+      context: ./server
+      dockerfile: Dockerfile_develop
+    volumes:
+      - ./server:/app
+      - site-packages:/usr/local/lib/python3.8/site-packages
+      - app-usr-local-bin:/usr/local/bin
+    depends_on:
+      - redis
+      - postgres
+    env_file:
+      - ./server/config/.env
+    # command: tail -f /dev/null  # Uncomment this and comment next line for debugging
+    command: celery -A apps.tasks worker -l DEBUG
+
+  # Elastic Search: elasticsearch as hostname
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.9.1
+    environment:
+      - xpack.security.enabled=false
+      - discovery.type=single-node
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - elasticsearch-data:/usr/share/elasticsearch/data
+    ports:
+      - 9200:9200
+
+  # Kibana (Visualization/Dev tool): kibana as hostname
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.9.1
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+    ports:
+      - 5601:5601
+    depends_on:
+      - elasticsearch
+
+# local volumes
+volumes:
+  postgres_data: {}
+  static-assets:
+    driver: local
+  site-packages:
+    driver: local
+  app-usr-local-bin:
+    driver: local
+  redis-data:
+    driver: local
+  elasticsearch-data:
+    driver: local

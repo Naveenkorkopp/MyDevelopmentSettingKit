@@ -1,0 +1,102 @@
+# Django Web Framework
+Django==3.0
+
+# Environment Variables
+django-environ==0.4.5
+
+# RESTful Web Services
+djangorestframework==3.10.3
+
+# Helpful Extensions
+django-extensions==3.0.9
+
+# Postgres Adapter package
+psycopg2-binary==2.8.6
+
+# Image handler
+django-filer==2.0.2
+
+# Django admin styling
+djangocms-admin-style==2.0.2
+
+# AWS package
+boto3==1.16.14
+
+# Celery & redis package
+celery==5.0.2
+redis==3.5.3
+
+# Django rest auth
+django-rest-knox==4.1.0
+
+# Encyption/Decryption package
+cryptography==3.2.1
+
+# Unit Test
+coverage==5.3
+# PEP 8 checks
+flake8==3.8.4
+
+# Python Requests
+requests==2.25.0
+# Async Requests
+aiohttp==3.7.3
+
+# Multilanguage Model field support
+django-parler==2.2
+
+# CORS package
+django-cors-headers==3.6.0
+
+# ics file generator
+ics==0.7
+
+# Swagger API documentation
+drf-yasg==1.20.0
+
+# Array field better UI in admin
+django-better-admin-arrayfield==1.4.2
+
+# Multiple model serializer
+django-rest-multiple-models==2.1.3
+
+# Firebase Variables
+pyfcm==1.5.1
+
+# Static & Media file storage to s3
+django-storages==1.11.1
+
+# Versioning for models
+django-simple-history==2.12.0
+
+# Autocomplete filter for Foreignkeys
+django-admin-autocomplete-filter==0.6.1
+# Range Filter
+django-admin-rangefilter==0.8.1
+# Mulitple choice list filter
+django-admin-multiple-choice-list-filter==0.1.1
+
+# ElasticSearch package
+elasticsearch==7.9.1
+
+# CK Editor for html, email template
+django-ckeditor==6.0.0
+
+# Export for reporting
+django-import-export==2.5.0
+
+# Admin re-order the index page
+django-modeladmin-reorder==0.3.1
+
+# Numeric filter for admin page
+django-admin-numeric-filter==0.1.6
+
+# Multiple model select autocomplete filter
+django-select2==7.7.1
+django-select2-admin-filters==0.1.3
+
+# Django redis
+django-redis==4.12.1
+
+# CKEditor for admin fields
+django-ckeditor==6.0.0

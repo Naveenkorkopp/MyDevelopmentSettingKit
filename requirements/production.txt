@@ -1,0 +1,8 @@
+# Pro-tip: Try not to put anything here. Avoid dependencies in
+#   production that aren't in development.
+-r base.txt
+
+# Production server gunicorn - Install current stable version.
+gunicorn==20.0.4
+# gevent for fast synchronous calls
+gevent==20.9.0
