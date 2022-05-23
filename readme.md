@@ -10,7 +10,7 @@ Build Status - Backend
 |[![Build Status]()]()|[![Build Status]()]()|[![Build Status]()]()|[![Build Status]()]()|
 
 
-|  ENV       |    SEIU-ADMIN    |
+|  ENV       |    ADMIN    |
 |------------|-----------|
 |  DEV       |   |
 |  QA        |   |
@@ -46,7 +46,7 @@ Build Status - Backend
         sh ./start_elasticsearch.sh
 
 
-##### Open the SEIU-Admin site in browser:
+##### Open the Admin site in browser:
 
 Admin : [http://localhost:8000/admin](http://localhost:8000/admin)
 
