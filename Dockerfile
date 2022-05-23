@@ -1,6 +1,6 @@
 FROM python:3.8-slim
 
-LABEL maintainer="DevOps (GALE Partners LP) devops@galepartners.com"
+LABEL maintainer="Naveen Korakoppa"
 
 ENV PYTHONUNBUFFERED 1
 ENV HOME /root
